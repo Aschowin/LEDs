@@ -263,6 +263,7 @@ CRGB leds[NUM_LEDS];
 /****************FOR CANDY CANE-like desings***************/
 CRGBPalette16 currentPalettestriped; //for Candy Cane
 CRGBPalette16 cubsPalettestriped; //for Fly the W
+CRGBPalette16 astrosPalettestriped; //for Astros
 CRGBPalette16 irishPalettestriped; //for Irish
 CRGBPalette16 boilersPalettestriped; //for Boilers
 CRGBPalette16 ThxPalettestriped; //for Thanksgiving
@@ -351,6 +352,7 @@ void setup() {
 
   setupStripedPalette( CRGB::Red, CRGB::Red, CRGB::White, CRGB::White); //for CANDY CANE
   setupcubsPalette( CRGB::MediumBlue, CRGB::MediumBlue, CRGB::White, CRGB::White); //for Fly the W
+  setupastrosPalette( CRGB::Navy, CRGB::Navy, CRGB::DarkOrange, CRGB::DarkOrange); //for Astros
   setupThxPalette( CRGB::OrangeRed, CRGB::Olive, CRGB::Maroon, CRGB::Maroon); //for Thanksgiving
   setupirishPalette( CRGB::Navy, CRGB::Navy, CRGB::Gold, CRGB::Gold); //for Irish
   setupboilersPalette( CRGB::Black, CRGB::Black, CRGB::Gold, CRGB::Gold); //for Boilers
@@ -901,6 +903,13 @@ void setupStripedPalette( CRGB A, CRGB AB, CRGB B, CRGB BA)
 void setupcubsPalette( CRGB A, CRGB AB, CRGB B, CRGB BA)
 {
   cubsPalettestriped = CRGBPalette16(
+                            A, A, A, A, A, A, A, A, B, B, B, B, B, B, B, B
+                          );
+}
+
+void setupastrosPalette( CRGB A, CRGB AB, CRGB B, CRGB BA)
+{
+  astrosPalettestriped = CRGBPalette16(
                             A, A, A, A, A, A, A, A, B, B, B, B, B, B, B, B
                           );
 }
