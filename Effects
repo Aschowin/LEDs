@@ -350,7 +350,7 @@ void setup() {
   FastLED.setBrightness(brightness);
 
   setupStripedPalette( CRGB::Red, CRGB::Red, CRGB::White, CRGB::White); //for CANDY CANE
-  setupcubsPalette( CRGB::Blue, CRGB::Blue, CRGB::White, CRGB::White); //for Fly the W
+  setupcubsPalette( CRGB::MediumBlue, CRGB::MediumBlue, CRGB::White, CRGB::White); //for Fly the W
   setupThxPalette( CRGB::OrangeRed, CRGB::Olive, CRGB::Maroon, CRGB::Maroon); //for Thanksgiving
   setupirishPalette( CRGB::Navy, CRGB::Navy, CRGB::Gold, CRGB::Gold); //for Irish
   setupboilersPalette( CRGB::Black, CRGB::Black, CRGB::Gold, CRGB::Gold); //for Boilers
