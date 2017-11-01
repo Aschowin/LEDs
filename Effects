@@ -355,7 +355,7 @@ void setup() {
   setupastrosPalette( CRGB::Navy, CRGB::Navy, CRGB::DarkOrange, CRGB::DarkOrange); //for Astros
   setupThxPalette( CRGB::OrangeRed, CRGB::Olive, CRGB::Maroon, CRGB::Maroon); //for Thanksgiving
   setupirishPalette( CRGB::Navy, CRGB::Navy, CRGB::Gold, CRGB::Gold); //for Irish
-  setupboilersPalette( CRGB::Black, CRGB::Black, CRGB::Gold, CRGB::Gold); //for Boilers
+  setupboilersPalette( CRGB::Gray, CRGB::Gray, CRGB::Gold, CRGB::Gold); //for Boilers
   setupHalloweenPalette( CRGB::OrangeRed, CRGB::OrangeRed, CRGB::Indigo, CRGB::Indigo); //for Halloween
   setupHJPalette( CRGB::Red, CRGB::Red, CRGB::Green, CRGB::Green); //for Holly Jolly
   setupIndPalette( CRGB::FireBrick, CRGB::Cornsilk, CRGB::MediumBlue, CRGB::MediumBlue); //for Independence
