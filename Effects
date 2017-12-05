@@ -196,6 +196,15 @@ DEFINE_GRADIENT_PALETTE( test_gp ) {
 //255,  255,  0,  0};// and back to Red
 };  
 
+DEFINE_GRADIENT_PALETTE( xmas_lights ) {
+    0,  255,  0,  0, // Red    
+// 96,    0,255,  0, // Green
+//224,  171,  0, 85, // Pink
+  160,    0,  0,255, // Blue
+// 64,  254,216, 93, // Yellow
+//255,  255,  0,  0};// and back to Red
+};  
+
 // Gradient palette "bhw2_greenman_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw2/tn/bhw2_greenman.png.index.html
 // converted for FastLED with gammas (2.6, 2.2, 2.5)
@@ -503,6 +512,15 @@ void loop() {
   }
 }
   
+  if (setEffect == "XMas Lights") {                                  // colored stripes pulsing in RED, GREEN, PINK, BLUE, GOLD 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = xmas_lights;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
   if (setEffect == "St Patty") {                                  // colored stripes pulsing in Shades of GREEN 
     uint8_t BeatsPerMinute = 62;
     CRGBPalette16 palette = bhw2_greenman_gp;
