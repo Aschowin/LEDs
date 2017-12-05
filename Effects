@@ -11,6 +11,7 @@ This is the code I use for my MQTT LED Strip controlled from Home Assistant. It'
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#define FASTLED_INTERRUPT_RETRY_COUNT 0
 #include <FastLED.h>
 
 
@@ -344,6 +345,7 @@ PubSubClient client(espClient);
 ////////////////////////////////////////////////////////////
 
 void setup() {
+  WiFi.setSleepMode(WIFI_NONE_SLEEP);
   Serial.begin(115200);
 
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
