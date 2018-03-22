@@ -215,6 +215,43 @@ DEFINE_GRADIENT_PALETTE( bhw2_greenman_gp ) {
   130,   1,168,  2,
   255,   1, 22,  1};
 
+// Gradient palette "bhw1_33_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw1/tn/bhw1_33.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 16 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw1_33_gp ) {
+    0,   2,  1,  8,
+   94,  79,  2,212,
+  140, 110, 11,197,
+  255,   2,  1,  8};
+
+// Gradient palette "bhw1_HIMpink_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw1/tn/bhw1_HIMpink.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 28 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw1_HIMpink_gp ) {
+    0, 222, 59,133,
+   20, 255, 12,255,
+   66, 217, 13, 75,
+  122, 197, 30,145,
+  163, 244,135,203,
+  209, 197, 30,145,
+  255, 217, 13, 75};
+
+// Gradient palette "bhw1_19_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw1/tn/bhw1_19.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 20 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw1_19_gp ) {
+    0,  82,  1,  3,
+   79,  20,  1,  1,
+  181, 139,  1,  0,
+  252,  20,  1,  1,
+  255,  20,  1,  1};
+
 // Gradient palette "Pills_3_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/ds/icons/tn/Pills-3.png.index.html
 // converted for FastLED with gammas (2.6, 2.2, 2.5)
@@ -524,6 +561,33 @@ void loop() {
   if (setEffect == "St Patty") {                                  // colored stripes pulsing in Shades of GREEN 
     uint8_t BeatsPerMinute = 62;
     CRGBPalette16 palette = bhw2_greenman_gp;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
+if (setEffect == "Advent-Lent") {                                  // colored stripes pulsing in Shades of Purple 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = bhw1_33_gp;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
+if (setEffect == "Gaudete") {                                  // colored stripes pulsing in Shades of Pink 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = bhw1_HIMpink_gp;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
+if (setEffect == "Martyr") {                                  // colored stripes pulsing in Shades of Red 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = bhw1_19_gp;
     uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
     for( int i = 0; i < NUM_LEDS; i++) { //9948
     leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
