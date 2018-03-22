@@ -251,6 +251,34 @@ DEFINE_GRADIENT_PALETTE( bhw1_19_gp ) {
   181, 139,  1,  0,
   252,  20,  1,  1,
   255,  20,  1,  1};
+  
+// Gradient palette "bhw4_048_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw4/tn/bhw4_048.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 24 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw4_048_gp ) {
+    0,   1, 12, 36,
+   51,  10,100,158,
+   94, 128,225,210,
+  127, 252,250,237,
+  153, 128,227,199,
+  255,   5, 25, 52};
+
+// Gradient palette "bhw2_blackness_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw2/tn/bhw2_blackness.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 32 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw2_blackness_gp ) {
+    0,   0,  0,  0,
+   40,   0,  0,  0,
+   73,   1,  2,  1,
+  112,   7, 12,  8,
+  140,   7, 12,  8,
+  181,   1,  2,  1,
+  209,   0,  0,  0,
+  255,   0,  0,  0};
 
 // Gradient palette "Pills_3_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/ds/icons/tn/Pills-3.png.index.html
@@ -588,6 +616,24 @@ if (setEffect == "Gaudete") {                                  // colored stripe
 if (setEffect == "Martyr") {                                  // colored stripes pulsing in Shades of Red 
     uint8_t BeatsPerMinute = 62;
     CRGBPalette16 palette = bhw1_19_gp;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
+if (setEffect == "Marian") {                                  // colored stripes pulsing in Shades of Blue and White 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = bhw4_048_gp;
+    uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+    for( int i = 0; i < NUM_LEDS; i++) { //9948
+    leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
+  }
+}
+
+if (setEffect == "OFF") {                                  // Failsafe OFF Button 
+    uint8_t BeatsPerMinute = 62;
+    CRGBPalette16 palette = bhw2_blackness_gp;
     uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
     for( int i = 0; i < NUM_LEDS; i++) { //9948
     leds[i] = ColorFromPalette(palette, gHue+(i*2), beat-gHue+(i*10));
