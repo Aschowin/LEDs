@@ -339,6 +339,7 @@ CRGB leds[NUM_LEDS];
 CRGBPalette16 currentPalettestriped; //for Candy Cane
 CRGBPalette16 cubsPalettestriped; //for Fly the W
 CRGBPalette16 astrosPalettestriped; //for Astros
+CRGBPalette16 astros2Palettestriped; //for Astros2
 CRGBPalette16 irishPalettestriped; //for Irish
 CRGBPalette16 boilersPalettestriped; //for Boilers
 CRGBPalette16 ThxPalettestriped; //for Thanksgiving
@@ -427,11 +428,12 @@ void setup() {
   FastLED.setBrightness(brightness);
 
   setupStripedPalette( CRGB::Red, CRGB::Red, CRGB::White, CRGB::White); //for CANDY CANE
-  setupcubsPalette( CRGB::MediumBlue, CRGB::MediumBlue, CRGB::White, CRGB::White); //for Fly the W
+  setupcubsPalette( CRGB::0E3386, CRGB::0E3386, CRGB::White, CRGB::White); //for Fly the W
   setupastrosPalette( CRGB::Navy, CRGB::Navy, CRGB::DarkOrange, CRGB::DarkOrange); //for Astros
+  setupastros2Palette( CRGB::002147, CRGB::002147, CRGB::D6492A, CRGB::D6492A); //for Astros2
   setupThxPalette( CRGB::OrangeRed, CRGB::Olive, CRGB::Maroon, CRGB::Maroon); //for Thanksgiving
-  setupirishPalette( CRGB::Navy, CRGB::Navy, CRGB::Gold, CRGB::Gold); //for Irish
-  setupboilersPalette( CRGB::Gray, CRGB::Gray, CRGB::Gold, CRGB::Gold); //for Boilers
+  setupirishPalette( CRGB::0A233F, CRGB::0A233F, CRGB::B09043, CRGB::B09043); //for Irish
+  setupboilersPalette( CRGB::4D4038, CRGB::4D4038, CRGB::98700D, CRGB::98700D); //for Boilers
   setupHalloweenPalette( CRGB::OrangeRed, CRGB::OrangeRed, CRGB::Indigo, CRGB::Indigo); //for Halloween
   setupHJPalette( CRGB::Red, CRGB::Red, CRGB::Green, CRGB::Green); //for Holly Jolly
   setupIndPalette( CRGB::FireBrick, CRGB::Cornsilk, CRGB::MediumBlue, CRGB::MediumBlue); //for Independence
@@ -1040,6 +1042,13 @@ void setupcubsPalette( CRGB A, CRGB AB, CRGB B, CRGB BA)
 void setupastrosPalette( CRGB A, CRGB AB, CRGB B, CRGB BA)
 {
   astrosPalettestriped = CRGBPalette16(
+                            A, A, A, A, A, A, A, A, B, B, B, B, B, B, B, B
+                          );
+}
+
+void setupastros2Palette( CRGB A, CRGB AB, CRGB B, CRGB BA)
+{
+  astros2Palettestriped = CRGBPalette16(
                             A, A, A, A, A, A, A, A, B, B, B, B, B, B, B, B
                           );
 }
